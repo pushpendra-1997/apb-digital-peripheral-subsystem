@@ -1,63 +1,86 @@
 # APB-Based Digital Peripheral Subsystem
 
-> Design and implementation of a modular digital peripheral subsystem for embedded SoCs using Verilog HDL.
+Design and implementation of a modular digital peripheral subsystem for embedded Systems-on-Chip (SoCs) using Verilog HDL.
 
 ---
 
 ## Overview
 
-Modern embedded Systems-on-Chip (SoCs) integrate several reusable digital peripherals such as GPIO controllers, timers, PWM generators, and interrupt controllers. These peripherals communicate with the embedded processor through a standard bus interface.
+Modern embedded SoCs integrate multiple reusable digital peripherals such as GPIO controllers, timers, PWM generators, and interrupt controllers. These peripherals communicate with the embedded processor through a standard bus interface.
 
-This project aims to design and implement an APB-based Digital Peripheral Subsystem using synthesizable Verilog HDL while following an industry-style RTL design flow from architecture specification to verification and synthesis.
+This project focuses on the design and implementation of a modular APB-based Digital Peripheral Subsystem using synthesizable Verilog HDL while following an industry-style RTL design methodology, including architecture definition, functional verification, RTL synthesis, and technical documentation.
 
 ---
 
 ## Project Objectives
 
-- Design reusable digital IP blocks in Verilog HDL
-- Understand SoC peripheral architecture
-- Learn AMBA APB bus integration
-- Perform functional verification
-- Perform RTL synthesis using Yosys
-- Maintain complete project documentation using GitHub
+- Design reusable digital IP blocks using synthesizable Verilog HDL.
+- Implement an AMBA APB-compliant peripheral subsystem for embedded SoCs.
+- Develop modular and parameterized RTL suitable for IP reuse.
+- Perform functional verification through simulation.
+- Perform RTL synthesis using open-source EDA tools.
+- Maintain structured project documentation following an industry-oriented development workflow.
 
 ---
 
-## Planned Digital IP Blocks
+## Digital IP Blocks
 
+The subsystem consists of the following reusable digital IPs:
+
+- APB Slave Interface
 - GPIO Controller
 - Programmable Timer
 - PWM Generator
 - Interrupt Controller
-- APB Slave Interface
 
 ---
 
-## Design Flow
+## System Architecture
 
 ```
-Specification
-      ↓
-Architecture
-      ↓
-RTL Design
-      ↓
-Verification
-      ↓
+                     Embedded Processor
+                             │
+                      APB Master Interface
+                             │
+                    -----------------------
+                             │
+                     APB Slave Interface
+                             │
+        ---------------------------------------------
+        │             │            │               │
+      GPIO         Timer         PWM      Interrupt Controller
+```
+
+---
+
+## RTL Design Flow
+
+```
+Requirement Analysis
+        ↓
+Architecture Specification
+        ↓
+RTL Design (Verilog HDL)
+        ↓
+Functional Verification
+        ↓
 RTL Synthesis (Yosys)
-      ↓
+        ↓
 Documentation
 ```
 
 ---
 
-## Tools
+## Development Environment
 
-- Verilog HDL
-- Ubuntu Linux
-- Git & GitHub
-- Xilinx Vivado
-- Yosys
+| Category | Tools |
+|----------|-------|
+| Operating System | Ubuntu Linux |
+| HDL | Verilog HDL |
+| Version Control | Git & GitHub |
+| Simulation | Xilinx Vivado|
+| RTL Synthesis | Yosys |
+| Editor | Visual Studio Code |
 
 ---
 
@@ -77,17 +100,20 @@ apb-digital-peripheral-subsystem
 
 ---
 
-## Current Status
+## Repository Organization
 
-🚧 **Project Initialization**
+- **docs/** – Project specifications, architecture, register maps and design documentation.
+- **rtl/** – Synthesizable Verilog RTL modules.
+- **tb/** – Functional verification testbenches.
+- **reports/** – RTL synthesis and analysis reports.
+- **scripts/** – Automation scripts for simulation and synthesis.
+- **images/** – Block diagrams, timing diagrams and simulation waveforms.
 
-Current progress:
+---
 
-- Repository created
-- Project structure organized
-- Documentation planning started
+## Design Philosophy
 
-Implementation of digital IP modules will be added progressively.
+The objective of this project is to develop a modular and reusable digital peripheral subsystem that reflects industry-standard RTL design practices used in embedded SoC development. The implementation emphasizes clean RTL architecture, modular IP design, functional correctness, synthesizability, and maintainable technical documentation.
 
 ---
 
@@ -95,6 +121,6 @@ Implementation of digital IP modules will be added progressively.
 
 **Pushpendra Singh**
 
-B.Tech Electronics & VLSI Engineering
+B.Tech Electronics and VLSI Engineering
 
 Dr. B. R. Ambedkar National Institute of Technology Jalandhar
